@@ -12,8 +12,15 @@ footer {
   flex-direction: column;
   background-color: #aaccb1;
   margin-top: 10px;
-  padding-top: 10px;
   padding-left: 10px;
+}
+
+footer a {
+  padding-top: 10px;
+}
+
+footer p {
+  padding-bottom: 1px;
 }
 
 main {
@@ -35,9 +42,8 @@ section {
 
 aside {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #c3dbb4;
-  padding-top: 20px;
   padding-left: 10px;
   width: 150px;
 }
