@@ -7,15 +7,16 @@
     <title>Editor Online de C++</title>
   </head>
   <body>
+    <script src="../js/login.js"></script>
     <header>
       <nav>
+        <!-- Será que ficaria melhor deixar tudo no index.html e trocar o que é exibido? -->
         <a href="./index.html">Editor</a>
         <a href="./proposta.html">Proposta</a>
         <a href="./criterios.html">Critérios</a>
         <a href="./creditos.html">Créditos</a>
       </nav>
       <div class="dropdown">
-        <script src="../js/login.js"></script>
         <button onclick="mostraLoginLogon()" class="dropbtn">
           Login/Registrar
         </button>
@@ -27,22 +28,37 @@
     </header>
     <section>
       <main>
-        <h1>Créditos</h1>
-        <p style="line-height: 1.5; height: 90%">
-          <b>Grupo:</b> Gabriel Mengato Chiarelli de Souza Scalon </br>
-          Thiago Soares Prado Carneiro </br>
-          <b>Professor:</b> Wyllian Bezerra da Silva </br>
-          <b>Universidade Federal de Santa Catarina</b> </br>
-          <b>Editor de código:</b> Visual Studio Code </br>
-          <b>Linguagens Utilizadas:</b> </br>
-          - HTML5</br>
-          - CSS</br>
-          - JavaScript
-        </p>
-        <a href="https://www.colourlovers.com/palette/475875/Gentle_Waves"
-          style="height: 10%;">- Paleta "Gentle Waves" do site "Colour Lovers" pelo usuário
-          "Skyblue2u".</a
-        >
+        <!-- Falta incluir um texto descrevendo os requisitos pra login e um botão pra ver a senha-->
+        <h1>Login</h1>
+        <form>
+          <label>Usuário:</label
+          ><input
+            type="text"
+            id="loginUser"
+            oninput="validaLoginUsuario('loginUser', 'loginUsuarioCorreto')"
+          /><img
+            src="../imagens/Confirma.png"
+            class="invisivel"
+            id="loginUsuarioCorreto"
+          />
+          <label>Senha:</label
+          ><input
+            type="password"
+            id="loginPass"
+            oninput="validaSenhaUsuario('loginPass', 'loginSenhaCorreto')"
+          /><img
+            src="../imagens/Confirma.png"
+            class="invisivel"
+            id="loginSenhaCorreto"
+          />
+
+          <button
+            type="submit"
+            onclick="validaLogin('loginUsuarioCorreto','loginSenhaCorreto', event)"
+          >
+            Entrar
+          </button>
+        </form>
       </main>
     </section>
     <footer>
