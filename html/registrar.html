@@ -7,6 +7,7 @@
     <title>Editor Online de C++</title>
   </head>
   <body>
+    <script src="../js/login_registro.js"></script>
     <header>
       <nav>
         <!-- Será que ficaria melhor deixar tudo no index.html e trocar o que é exibido? -->
@@ -16,7 +17,6 @@
         <a href="./creditos.html">Créditos</a>
       </nav>
       <div class="dropdown">
-        <script src="../js/login.js"></script>
         <button onclick="mostraLoginLogon()" class="dropbtn">
           Login/Registrar
         </button>
@@ -26,7 +26,84 @@
         </div>
       </div>
     </header>
-    <section></section>
+    <section>
+      <main style="min-height: 0; height: fit-content">
+        <!-- Falta incluir um texto descrevendo os requisitos pra login e um botão pra ver a senha-->
+        <h1>Registrar-se</h1>
+        <form>
+          <label>Usuário:</label
+          ><input
+            type="text"
+            id="logonUser"
+            oninput="validaLoginUsuario('logonUser', 'logonUsuarioCorreto')"
+          /><img
+            src="../imagens/Confirma.png"
+            class="invisivel"
+            id="logonUsuarioCorreto"
+          />
+          <label>Email:</label>
+          <input
+            type="text"
+            id="emailLogon"
+            oninput="validaEmailUsuario('emailLogon', 'logonEmailCorreto')"
+          />
+          <img
+            src="../imagens/Confirma.png"
+            class="invisivel"
+            id="logonEmailCorreto"
+          />
+          <label>Repita o seu email:</label>
+          <input
+            type="text"
+            id="emailRepetidoLogon"
+            oninput="validaIgualdade('emailRepetidoLogon', 'emailLogon','logonEmailIgual')"
+          />
+          <img
+            src="../imagens/Confirma.png"
+            class="invisivel"
+            id="logonEmailIgual"
+          />
+          <label>Senha:</label
+          ><input
+            type="password"
+            id="logonPass"
+            oninput="validaSenhaUsuario('logonPass', 'logonSenhaCorreto')"
+          /><img
+            src="../imagens/Confirma.png"
+            class="invisivel"
+            id="logonSenhaCorreto"
+          />
+          <label>Repita a senha:</label
+          ><input
+            type="password"
+            id="logonPassIgual"
+            oninput="validaIgualdade('logonPassIgual', 'logonPass','logonSenhasIguais')"
+          /><img
+            src="../imagens/Confirma.png"
+            class="invisivel"
+            id="logonSenhasIguais"
+          />
+
+          <button
+            type="submit"
+            onclick="validaRegistro('logonUsuarioCorreto', 'logonEmailCorreto', 'logonEmailIgual', 'logonSenhaCorreto', 'logonSenhasIguais',event)"
+          >
+            Criar conta
+          </button>
+        </form>
+        <p
+          style="
+            min-height: 0;
+            max-height: 100%;
+            height: fit-content;
+            box-sizing: border-box;
+          "
+        >
+          O nome de usuário deve ter pelo menos 5 caracteres e a senha deve ter
+          pelo menos 5 caracteres, 1 letra e 1 número.
+        </p>
+      </main>
+    </section>
     <footer>
       <a href="https://github.com/GabScalon/CPP-Online-Trabalho-Wyllian.git">
         Link para o repositório.</a
