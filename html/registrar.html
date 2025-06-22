@@ -28,7 +28,7 @@
     </header>
     <section>
       <main style="min-height: 0; height: fit-content">
-        <!-- Falta incluir um texto descrevendo os requisitos pra login e um botão pra ver a senha-->
+        <!-- Falta incluir um botão pra ver a senha-->
         <h1>Registrar-se</h1>
         <form>
           <label>Usuário:</label
@@ -63,22 +63,48 @@
             class="invisivel"
             id="logonEmailIgual"
           />
-          <label>Senha:</label
-          ><input
-            type="password"
-            id="logonPass"
-            oninput="validaSenhaUsuario('logonPass', 'logonSenhaCorreto')"
-          /><img
+          <label>Senha:</label>
+          <div class="password-container">
+            <input
+              type="password"
+              id="logonPass"
+              oninput="validaSenhaUsuario('logonPass', 'logonSenhaCorreto')"
+            />
+            <img
+              id="olhoLogon"
+              class="olho"
+              src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"
+              onmousedown="mostrarSenha('logonPass', 'olhoLogon')"
+              onmouseup="ocultarSenha('logonPass', 'olhoLogon')"
+              width="20"
+              height="20"
+            />
+          </div>
+          <img
             src="../imagens/Confirma.png"
             class="invisivel"
             id="logonSenhaCorreto"
+            width="10"
+            height="10"
           />
-          <label>Repita a senha:</label
-          ><input
-            type="password"
-            id="logonPassIgual"
-            oninput="validaIgualdade('logonPassIgual', 'logonPass','logonSenhasIguais')"
-          /><img
+          <label>Repita a senha:</label>
+          <div class="password-container">
+            <input
+              type="password"
+              id="logonPassIgual"
+              oninput="validaIgualdade('logonPassIgual', 'logonPass','logonSenhasIguais')"
+            />
+            <img
+              id="olhoLogonIgual"
+              class="olho"
+              src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"
+              onmousedown="mostrarSenha('logonPassIgual', 'olhoLogonIgual')"
+              onmouseup="ocultarSenha('logonPassIgual', 'olhoLogonIgual')"
+              width="20"
+              height="20"
+            />
+          </div>
+          <img
             src="../imagens/Confirma.png"
             class="invisivel"
             id="logonSenhasIguais"

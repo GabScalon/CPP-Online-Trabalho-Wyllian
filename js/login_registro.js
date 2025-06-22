@@ -140,3 +140,15 @@ function ehEmail(inputEmail) {
   se tem um . depois do email, se tem pelo menos duas letras depois do ., aceita extensões de 
   domínios múltiplos como .com.br e aceita algumas caracteres como letras e números antes do @*/
 }
+
+function mostrarSenha(senhaLocal, olhoLocal) {
+  document.getElementById(senhaLocal).type = "text";
+  document.getElementById(olhoLocal).src =
+    "https://cdn3.iconfinder.com/data/icons/feather-5/24/eye-off-256.png";
+}
+
+function ocultarSenha(senhaLocal, olhoLocal) {
+  document.getElementById(senhaLocal).type = "password";
+  document.getElementById(olhoLocal).src =
+    "https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png";
+}

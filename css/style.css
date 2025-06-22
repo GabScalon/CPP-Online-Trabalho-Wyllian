@@ -165,14 +165,20 @@ form {
   margin-right: 10px;
   padding: 20px;
   display: grid;
-  grid-template-columns: 0.25fr 0.5fr 2fr;
+  grid-template-columns: 150px 1fr 30px;
   gap: 5px;
+  align-items: center;
+}
+
+form input {
+  max-width: 250px;
+  width: 100%;
 }
 
 form button {
-  width: 100px;
-  grid-column: span 1;
+  grid-column: 2 / span 2;
   justify-self: start;
+  width: 100px;
 }
 
 aside {
@@ -206,4 +212,26 @@ aside p {
 
 img.invisivel {
   visibility: hidden;
+}
+
+.passwordSpy {
+  position: relative;
+  text-align: center;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+}
+
+.olho {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
 }
