@@ -1,4 +1,3 @@
-// src/components/Criterios.jsx
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 
@@ -15,11 +14,11 @@ function Criterios() {
           <br />
           [ ] Aplicação acessível apenas com autenticação
           <br />
-          [ ] Cadastro de novos usuários
+          [x] Cadastro de novos usuários
           <br />
           [ ] Atualização de cadastro (na autenticação)
           <br />
-          [ ] Construção de base de dados (MongoDB) no back-end
+          [x] Construção de base de dados (MongoDB) no back-end
           <br />
           [ ] Função de compartilhamento de dados entre usuários
           <br />

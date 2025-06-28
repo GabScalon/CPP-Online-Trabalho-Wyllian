@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:5000/api';
 
-// Create axios instance
+// Instância axios
 const api = axios.create({
   baseURL: API_URL,
   headers: {
@@ -10,7 +10,7 @@ const api = axios.create({
   }
 });
 
-// Add request interceptor to include auth token
+// Interceptador de request para requerir token de autenticação
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('userToken');

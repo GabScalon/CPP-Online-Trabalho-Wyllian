@@ -128,7 +128,7 @@ function Registrar() {
           password
         });
         
-        navigate("/"); // Redirect to home page after successful registration
+        navigate("/");
       } catch (error) {
         setError(error.toString());
       } finally {

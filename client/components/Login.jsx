@@ -58,7 +58,7 @@ function Login() {
         setLoading(true);
         setError("");
         await login(username, password);
-        navigate("/"); // Redirect to home page after successful login
+        navigate("/");
       } catch (error) {
         setError(error.toString());
       } finally {
