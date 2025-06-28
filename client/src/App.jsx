@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "../components/Header";
-import Creditos from "../components/Creditos";
-import Footer from "../components/Footer";
+import Header from "../components/Header.jsx";
+import Creditos from "../components/Creditos.jsx";
+import Footer from "../components/Footer.jsx";
 
-import Home from "../components/Home";
-import Proposta from "../components/Proposta";
-import Criterios from "../components/Criterios";
-import Login from "../components/Login";
-import Registrar from "../components/Registrar";
+import Home from "../components/Home.jsx";
+import Proposta from "../components/Proposta.jsx";
+import Criterios from "../components/Criterios.jsx";
+import Login from "../components/Login.jsx";
+import Registrar from "../components/Registrar.jsx";
 
 function App() {
   return (

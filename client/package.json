@@ -1,7 +1,7 @@
 {
-  "name": "site-mern-cpp",
+  "name": "cpp-online-client",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,8 +12,9 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^7.6.2"
+    "@dr.pogodin/react-helmet": "^3.0.2",
+    "react-router-dom": "^7.6.2",
+    "axios": "^1.3.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",

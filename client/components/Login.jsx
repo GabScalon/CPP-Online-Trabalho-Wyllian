@@ -1,10 +1,10 @@
-// src/components/Login.jsx (Versão Corrigida do JSX)
-
 import React, { useState } from "react";
-import ConfirmaIcon from "../src/assets/Confirma.png";
-import OlhoVisivel from "../src/assets/senhaPararVer.svg";
-import OlhoOculto from "../src/assets/senhaVer.svg";
-import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
+import { login } from "../src/services/authService";
+import ConfirmaIcon from "../assets/Confirma.png";
+import OlhoVisivel from "../assets/senhaPararVer.svg";
+import OlhoOculto from "../assets/senhaVer.svg";
+import { Helmet } from "@dr.pogodin/react-helmet";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -12,6 +12,10 @@ function Login() {
   const [isUsernameValid, setIsUsernameValid] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  
+  const navigate = useNavigate();
 
   const validaLoginUsuario = (value) => {
     const isValid = value.length >= 5;
@@ -44,18 +48,24 @@ function Login() {
   const handleMouseUpPassword = () => setShowPassword(false);
   const handleMouseLeavePassword = () => setShowPassword(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const usernameOK = validaLoginUsuario(username);
     const passwordOK = validaSenhaUsuario(password);
 
     if (usernameOK && passwordOK) {
-      console.log("Tentativa de Login:", { username, password });
-      alert(
-        "Login efetuado! (Este é apenas um placeholder. No futuro, os dados iriam para o backend.)"
-      );
+      try {
+        setLoading(true);
+        setError("");
+        await login(username, password);
+        navigate("/"); // Redirect to home page after successful login
+      } catch (error) {
+        setError(error.toString());
+      } finally {
+        setLoading(false);
+      }
     } else {
-      alert("Por favor, preencha corretamente os campos de Usuário e Senha.");
+      setError("Por favor, preencha corretamente os campos de Usuário e Senha.");
     }
   };
 
@@ -66,6 +76,7 @@ function Login() {
       </Helmet>
       <main style={{ minHeight: "0", height: "fit-content" }}>
         <h1>Login</h1>
+        {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <label htmlFor="loginUser">Usuário:</label>
           <div className="input-group">
@@ -74,6 +85,7 @@ function Login() {
               id="loginUser"
               value={username}
               onChange={handleUsernameChange}
+              disabled={loading}
             />
             <img
               src={ConfirmaIcon}
@@ -92,6 +104,7 @@ function Login() {
                 id="loginPass"
                 value={password}
                 onChange={handlePasswordChange}
+                disabled={loading}
               />
               <img
                 id="olhoLogin"
@@ -115,7 +128,9 @@ function Login() {
               />
             </div>
           </div>
-          <button type="submit">Entrar</button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Entrando..." : "Entrar"}
+          </button>
         </form>
         <p
           style={{

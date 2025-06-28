@@ -1,6 +1,6 @@
 // src/components/Criterios.jsx
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "@dr.pogodin/react-helmet";
 
 function Criterios() {
   return (
