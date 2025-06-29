@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 
-function Home() {
+function Editor() {
   useEffect(() => {
     // Cria e anexa o script do JDoodle
     const script = document.createElement("script");
@@ -19,7 +19,7 @@ function Home() {
   return (
     <section>
       <Helmet>
-        <title>Home | Editor Online C++</title>
+        <title>Editor | Editor Online C++</title>
       </Helmet>
       <main>
         <h1>Editor de C++</h1>
@@ -41,4 +41,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Editor;

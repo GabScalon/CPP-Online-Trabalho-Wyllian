@@ -6,7 +6,7 @@ import OlhoVisivel from "../assets/senhaPararVer.svg";
 import OlhoOculto from "../assets/senhaVer.svg";
 import { Helmet } from "@dr.pogodin/react-helmet";
 
-function Login() {
+function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isUsernameValid, setIsUsernameValid] = useState(false);
@@ -14,7 +14,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  
+
   const navigate = useNavigate();
 
   const validaLoginUsuario = (value) => {
@@ -58,14 +58,17 @@ function Login() {
         setLoading(true);
         setError("");
         await login(username, password);
-        navigate("/");
+        onLoginSuccess();
+        navigate("/editor");
       } catch (error) {
         setError(error.toString());
       } finally {
         setLoading(false);
       }
     } else {
-      setError("Por favor, preencha corretamente os campos de Usuário e Senha.");
+      setError(
+        "Por favor, preencha corretamente os campos de Usuário e Senha."
+      );
     }
   };
 
@@ -132,17 +135,6 @@ function Login() {
             {loading ? "Entrando..." : "Entrar"}
           </button>
         </form>
-        <p
-          style={{
-            minHeight: "0",
-            maxHeight: "100%",
-            height: "fit-content",
-            boxSizing: "border-box",
-          }}
-        >
-          O nome de usuário deve ter pelo menos 5 caracteres e a senha deve ter
-          pelo menos 5 caracteres, 1 letra e 1 número.
-        </p>
       </main>
     </section>
   );
