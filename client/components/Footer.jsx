@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <a
-        href="https://github.com/GabScalon/CPP-Online-Trabalho-Wyllian.git"
+        href="https://github.com/GabScalon/CPP-Online-Trabalho-Wyllian"
         target="_blank"
         rel="noopener noreferrer"
       >
