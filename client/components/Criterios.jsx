@@ -12,7 +12,7 @@ function Criterios() {
         <p>
           <b>AP</b>
           <br />
-          [ ] Aplicação acessível apenas com autenticação
+          [x] Aplicação acessível apenas com autenticação
           <br />
           [x] Cadastro de novos usuários
           <br />
@@ -49,25 +49,25 @@ function Criterios() {
           <br />
           &emsp; [x] - Problema
           <br />
-          &emsp; [ ] - Trabalhos relacionados
+          &emsp; [x] - Trabalhos relacionados
           <br />
           &emsp; [x] - Contribuição do trabalho
           <br />
           &emsp; [x] - Descrição da organização do trabalho
           <br />
-          [ ] Fundamentação teórica
+          [x] Fundamentação teórica
           <br />
-          [ ] Materiais e métodos
+          [x] Materiais e métodos
           <br />
           &emsp; [x] - Metodologia
           <br />
-          &emsp; [ ] - Discussão das principais partes de código
+          &emsp; [x] - Discussão das principais partes de código
           <br />
-          &emsp; [ ] - Roteiro detalhado de pacotes
+          &emsp; [x] - Roteiro detalhado de pacotes
           <br />
-          &emsp; [ ] - Roteiro detalhado de instalação
+          &emsp; [x] - Roteiro detalhado de instalação
           <br />
-          [ ] Resultados
+          [x] Resultados
           <br />
           &emsp; [x] - Discussão dos resultados obtidos
           <br />

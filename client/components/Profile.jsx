@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
-import { getCurrentUser } from "../src/services/authService"; // Importe a função para obter o usuário
-import { useNavigate } from "react-router-dom"; // Para redirecionar se não estiver logado
+import { getCurrentUser } from "../src/services/authService";
+import { useNavigate } from "react-router-dom";
 
 function Perfil() {
   const [userEmail, setUserEmail] = useState("");
@@ -15,8 +15,7 @@ function Perfil() {
       try {
         setLoading(true);
         // Assumimos que getCurrentUser() retorna um objeto com { email, username }
-        // ou que ele lida com a busca/decodificação do token e retorna os dados.
-        const user = await getCurrentUser(); // Chama a função do seu authService
+        const user = await getCurrentUser();
 
         if (user && user.email && user.username) {
           // Verifica se os dados necessários existem
@@ -25,7 +24,7 @@ function Perfil() {
         } else {
           // Se não há dados do usuário ou ele não está logado, redireciona para o login
           setError("Usuário não logado ou dados de perfil não encontrados.");
-          navigate("/login"); // Redireciona para a página de login
+          navigate("/login");
         }
       } catch (err) {
         console.error("Erro ao carregar perfil:", err);
